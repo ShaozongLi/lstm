@@ -22,7 +22,7 @@ def init_hidden(batch_size,hidden_size,device):
 
 
 if __name__== "__main__":
-    EPOACH=15
+    EPOACH=20
     BATCH_SIZE = 128
     INPUT_SIZE = 512
     HIDDEN_SIZE = 1024
@@ -36,7 +36,7 @@ if __name__== "__main__":
     model = torch.nn.DataParallel(model)
 
     #定义优化器
-    optimizer = torch.optim.AdamW(model.parameters(),lr=0.0005)
+    optimizer = torch.optim.AdamW(model.parameters(),lr=0.005)
 
     for i in range(EPOACH):
         optimizer.zero_grad()
