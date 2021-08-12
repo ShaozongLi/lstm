@@ -36,9 +36,10 @@ class LstmTokenzier():
                 f.writelines(label+"\n")
 
 
-    def token(self,text,max_length=128):
+    def token(self,text:str,max_length=128):
+        text = ''.join(text.lower().split())
         word_list = list(text)
-        input_id = [self.vocab.index(word)+1 for word in word_list]
+        input_id = [self.vocab.index(word) for word in word_list]
         if len(input_id)<max_length:
             input_id.extend([0] * (max_length - len(input_id)))
         else:

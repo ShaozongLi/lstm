@@ -8,7 +8,7 @@ import torch
 from lstm.tokenizer import LstmTokenzier
 
 if __name__=="__main__":
-    text="俗话说"
+    text="我高兴啊"
     tokenizer =LstmTokenzier()
     input_ids = tokenizer.token(text=text,max_length=64)
     input_ids = torch.tensor(input_ids,dtype=torch.long).view(1,-1)
